@@ -1,0 +1,41 @@
+﻿@model List<NewsItem>
+
+<h1>Список новостей</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Заголовок</th>
+            <th>Дата публикации</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var newsItem in Model)
+        {
+            <tr>
+                <td>
+                    <div class="display-4">
+                        <div>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjCAfVgATBaPFFWX2WWJF6x-gVW4P1mdvfKA&usqp=CAU"/>
+                        </div>
+                    <a asp-action="Details" asp-route-title="@newsItem.Title"><span style="display:flex;font-size:28px;">@newsItem.Title</span>
+                            <span style="display:flex;font-size:20px;">@newsItem.UpdatedDate
+                        </span></a>
+                    </div style="display:flex;">
+                    <form asp-action="Delete" asp-controller="News">
+                        <input type="hidden" name="Title" value="@newsItem.Title"/> 
+                      <button type="submit" class="btn-danger">Удалить Новость</button>
+                    </form>
+                     <div>
+                          <a asp-action="Edit" asp-route-title="@newsItem.Title" class="btn-close-white">
+                              Изменить Новость
+                              </a>
+                     </div>
+                </td>
+               
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">Создать новость</a>

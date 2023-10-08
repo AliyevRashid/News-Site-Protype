@@ -1,0 +1,11 @@
+﻿@model NewsItem 
+
+<h1>Детали новости</h1>
+
+<div>
+    <h2>@Model.Title</h2>
+    <p>@Model.Description</p>
+    <p>Дата публикации: @Model.UpdatedDate</p>
+</div>
+
+<a asp-action="Index" class="btn btn-secondary">Назад к списку</a>

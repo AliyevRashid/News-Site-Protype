@@ -1,0 +1,16 @@
+﻿@model NewsApplication.DTO.CreateNewsItemRequestDto
+@using NewsApplication.DTO;
+
+<h1>Создать новость</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Title">Заголовок:</label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Содержание:</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Создать</button>
+</form>

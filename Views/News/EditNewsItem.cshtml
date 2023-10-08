@@ -1,0 +1,19 @@
+﻿@model NewsApplication.DTO.EditNewsItemRequestDto
+@using NewsApplication.DTO;
+
+<h1>Редактировать новость</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="OldTitle" />
+    <div class="form-group">
+        <label asp-for="Title">Заголовок:</label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Содержание:</label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+</form>
+
+<a asp-action="Index" class="btn btn-secondary">Назад к списку</a>
